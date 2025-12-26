@@ -13,6 +13,8 @@ export interface Class {
   location_longitude: number;
   location_radius: number;
   location_address: string;
+  check_in_time?: string;
+  check_out_time?: string;
   created_at: string;
   student_count?: number;
 }
@@ -80,6 +82,8 @@ export function useTeacherClasses(teacherId: string) {
     location_longitude: number;
     location_radius: number;
     location_address: string;
+    check_in_time?: string;
+    check_out_time?: string;
   }) => {
     try {
       const { data, error } = await supabase
@@ -237,6 +241,28 @@ export function useAttendance(classId?: string, studentId?: string) {
     longitude: number
   ) => {
     try {
+      // Fetch class details to check if late
+      const { data: classData, error: classError } = await supabase
+        .from('classes')
+        .select('check_in_time')
+        .eq('id', classId)
+        .single();
+
+      if (classError) throw classError;
+
+      // Determine status based on check-in time
+      let status: 'present' | 'late' | 'absent' = 'present';
+      
+      if (classData?.check_in_time) {
+        const now = new Date();
+        const currentTime = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+        
+        // Compare current time with scheduled check-in time
+        if (currentTime > classData.check_in_time) {
+          status = 'late';
+        }
+      }
+
       const { data, error } = await supabase
         .from('attendance_records')
         .insert([{
@@ -245,7 +271,7 @@ export function useAttendance(classId?: string, studentId?: string) {
           check_in_time: new Date().toISOString(),
           check_in_latitude: latitude,
           check_in_longitude: longitude,
-          status: 'present', // You can add logic to determine if late
+          status: status,
         }])
         .select()
         .single();
@@ -253,7 +279,13 @@ export function useAttendance(classId?: string, studentId?: string) {
       if (error) throw error;
 
       await fetchAttendance();
-      toast.success('Checked in successfully!');
+      
+      if (status === 'late') {
+        toast.warning('Checked in - Marked as late');
+      } else {
+        toast.success('Checked in successfully!');
+      }
+      
       return data;
     } catch (error: any) {
       console.error('Error checking in:', error);
@@ -264,19 +296,58 @@ export function useAttendance(classId?: string, studentId?: string) {
 
   const checkOut = async (recordId: string, latitude: number, longitude: number) => {
     try {
+      // Fetch the attendance record to get the class_id and current status
+      const { data: attendanceRecord, error: recordError } = await supabase
+        .from('attendance_records')
+        .select('class_id, status')
+        .eq('id', recordId)
+        .single();
+
+      if (recordError) throw recordError;
+
+      // Fetch class details to check checkout time
+      const { data: classData, error: classError } = await supabase
+        .from('classes')
+        .select('check_out_time')
+        .eq('id', attendanceRecord.class_id)
+        .single();
+
+      if (classError) throw classError;
+
+      // Determine if checkout is late
+      let finalStatus = attendanceRecord.status;
+      let isLateCheckout = false;
+
+      if (classData?.check_out_time) {
+        const now = new Date();
+        const currentTime = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+        
+        // If checking out after the deadline, mark as absent
+        if (currentTime > classData.check_out_time) {
+          finalStatus = 'absent';
+          isLateCheckout = true;
+        }
+      }
+
       const { error } = await supabase
         .from('attendance_records')
         .update({
           check_out_time: new Date().toISOString(),
           check_out_latitude: latitude,
           check_out_longitude: longitude,
+          status: finalStatus,
         })
         .eq('id', recordId);
 
       if (error) throw error;
 
       await fetchAttendance();
-      toast.success('Checked out successfully!');
+      
+      if (isLateCheckout) {
+        toast.error('Checked out too late - Marked as absent');
+      } else {
+        toast.success('Checked out successfully!');
+      }
     } catch (error: any) {
       console.error('Error checking out:', error);
       toast.error(error.message || 'Failed to check out');

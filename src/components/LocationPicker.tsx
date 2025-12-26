@@ -4,11 +4,6 @@ import { useEffect, useState, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-// Fix for default marker icon in Next.js
-import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
-import markerIcon from 'leaflet/dist/images/marker-icon.png';
-import markerShadow from 'leaflet/dist/images/marker-shadow.png';
-
 interface LocationPickerProps {
   initialLat?: number;
   initialLng?: number;
@@ -72,7 +67,12 @@ export default function LocationPicker({ initialLat, initialLng, onLocationSelec
     });
 
     // Try to get user's location
-    map.locate({ setView: false, maxZoom: 15 });
+    map.locate({ 
+      setView: false, 
+      maxZoom: 15,
+      timeout: 30000,
+      enableHighAccuracy: false
+    });
     
     map.on('locationfound', (e: L.LocationEvent) => {
       if (!markerRef.current) {
@@ -84,6 +84,11 @@ export default function LocationPicker({ initialLat, initialLng, onLocationSelec
         setSelectedLocation({ lat: e.latlng.lat, lng: e.latlng.lng });
         onLocationSelect(e.latlng.lat, e.latlng.lng);
       }
+    });
+
+    // Handle location errors silently (user can still click on map)
+    map.on('locationerror', () => {
+      // Do nothing - user can manually select location by clicking
     });
 
     mapRef.current = map;

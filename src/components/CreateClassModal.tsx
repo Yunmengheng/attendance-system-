@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { X, MapPin, MapIcon } from 'lucide-react';
+import { X, MapPin, MapIcon, Clock } from 'lucide-react';
 import { toast } from 'sonner';
 import dynamic from 'next/dynamic';
 
@@ -22,6 +22,8 @@ interface CreateClassModalProps {
       radius: number;
       address: string;
     };
+    check_in_time?: string;
+    check_out_time?: string;
   }) => void;
 }
 
@@ -32,6 +34,8 @@ export function CreateClassModal({ onClose, onCreate }: CreateClassModalProps) {
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
   const [radius, setRadius] = useState('100');
+  const [checkInTime, setCheckInTime] = useState('');
+  const [checkOutTime, setCheckOutTime] = useState('');
   const [loadingLocation, setLoadingLocation] = useState(false);
   const [showMap, setShowMap] = useState(false);
 
@@ -66,7 +70,9 @@ export function CreateClassModal({ onClose, onCreate }: CreateClassModalProps) {
         longitude: parseFloat(longitude) || 0,
         radius: parseFloat(radius),
         address
-      }
+      },
+      check_in_time: checkInTime || undefined,
+      check_out_time: checkOutTime || undefined
     });
   };
 
@@ -81,7 +87,7 @@ export function CreateClassModal({ onClose, onCreate }: CreateClassModalProps) {
     }
 
     setLoadingLocation(true);
-    toast.info('Requesting location permission...');
+    toast.info('Getting your location...');
     
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -102,22 +108,21 @@ export function CreateClassModal({ onClose, onCreate }: CreateClassModalProps) {
             errorMessage = 'Location permission denied. Please enable location access in your browser settings.';
             break;
           case error.POSITION_UNAVAILABLE:
-            errorMessage = 'Location information is unavailable. Please try again.';
+            errorMessage = 'Location information is unavailable. Please try again or use the map.';
             break;
           case error.TIMEOUT:
-            errorMessage = 'Location request timed out. Please try again.';
+            errorMessage = 'Location request timed out. Please try using the map instead.';
             break;
           default:
-            errorMessage = 'An unknown error occurred. Please enter coordinates manually.';
+            errorMessage = 'Unable to get location. Please use the map to select a location.';
         }
         
-        console.error('Geolocation error:', error);
         toast.error(errorMessage);
       },
       {
-        enableHighAccuracy: true,
-        timeout: 15000,
-        maximumAge: 0
+        enableHighAccuracy: false,
+        timeout: 30000,
+        maximumAge: 60000
       }
     );
   };
@@ -309,6 +314,50 @@ export function CreateClassModal({ onClose, onCreate }: CreateClassModalProps) {
               <p className="text-sm text-muted-foreground mt-2">
                 Students must be within this distance to check in
               </p>
+            </div>
+          </div>
+
+          {/* Time Section */}
+          <div className="border-t border-border pt-5">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                <Clock className="w-4 h-4 text-primary" />
+              </div>
+              <h3 className="text-lg">Check-in Times</h3>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="checkInTime" className="block text-sm mb-2">
+                  Check-in Time (Optional)
+                </label>
+                <input
+                  id="checkInTime"
+                  type="time"
+                  value={checkInTime}
+                  onChange={(e) => setCheckInTime(e.target.value)}
+                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                />
+                <p className="text-sm text-muted-foreground mt-2">
+                  Students can check in starting from this time
+                </p>
+              </div>
+
+              <div>
+                <label htmlFor="checkOutTime" className="block text-sm mb-2">
+                  Check-out Time (Optional)
+                </label>
+                <input
+                  id="checkOutTime"
+                  type="time"
+                  value={checkOutTime}
+                  onChange={(e) => setCheckOutTime(e.target.value)}
+                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                />
+                <p className="text-sm text-muted-foreground mt-2">
+                  Students must check out before this time
+                </p>
+              </div>
             </div>
           </div>
 

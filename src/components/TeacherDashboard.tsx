@@ -55,6 +55,8 @@ export function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }:
         location_longitude: classData.location.longitude,
         location_radius: classData.location.radius,
         location_address: classData.location.address,
+        check_in_time: classData.check_in_time,
+        check_out_time: classData.check_out_time,
       });
       setShowCreateModal(false);
     } catch (error) {

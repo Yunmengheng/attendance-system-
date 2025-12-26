@@ -109,7 +109,6 @@ export function StudentDashboard({ user, onLogout, isDarkMode, toggleDarkMode }:
             errorMessage = 'An unknown error occurred while getting location.';
         }
         
-        console.error('Geolocation error:', error);
         setLocationError(errorMessage);
         toast.error(errorMessage);
       },

@@ -88,7 +88,9 @@ function LocationPicker({ initialLat, initialLng, onLocationSelect }) {
             // Try to get user's location
             map.locate({
                 setView: false,
-                maxZoom: 15
+                maxZoom: 15,
+                timeout: 30000,
+                enableHighAccuracy: false
             });
             map.on('locationfound', {
                 "LocationPicker.useEffect": (e)=>{
@@ -103,6 +105,12 @@ function LocationPicker({ initialLat, initialLng, onLocationSelect }) {
                         });
                         onLocationSelect(e.latlng.lat, e.latlng.lng);
                     }
+                }
+            }["LocationPicker.useEffect"]);
+            // Handle location errors silently (user can still click on map)
+            map.on('locationerror', {
+                "LocationPicker.useEffect": ()=>{
+                // Do nothing - user can manually select location by clicking
                 }
             }["LocationPicker.useEffect"]);
             mapRef.current = map;
@@ -132,12 +140,12 @@ function LocationPicker({ initialLat, initialLng, onLocationSelect }) {
                     children: "Loading map..."
                 }, void 0, false, {
                     fileName: "[project]/src/components/LocationPicker.tsx",
-                    lineNumber: 109,
+                    lineNumber: 114,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/LocationPicker.tsx",
-                lineNumber: 108,
+                lineNumber: 113,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -149,7 +157,7 @@ function LocationPicker({ initialLat, initialLng, onLocationSelect }) {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/LocationPicker.tsx",
-                lineNumber: 112,
+                lineNumber: 117,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -160,7 +168,7 @@ function LocationPicker({ initialLat, initialLng, onLocationSelect }) {
                         children: "Click anywhere on the map to set the location"
                     }, void 0, false, {
                         fileName: "[project]/src/components/LocationPicker.tsx",
-                        lineNumber: 118,
+                        lineNumber: 123,
                         columnNumber: 9
                     }, this),
                     selectedLocation && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -173,19 +181,19 @@ function LocationPicker({ initialLat, initialLng, onLocationSelect }) {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/LocationPicker.tsx",
-                        lineNumber: 122,
+                        lineNumber: 127,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/LocationPicker.tsx",
-                lineNumber: 117,
+                lineNumber: 122,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/LocationPicker.tsx",
-        lineNumber: 106,
+        lineNumber: 111,
         columnNumber: 5
     }, this);
 }
