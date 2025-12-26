@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/4fd93823156e59e8.js"],"ViewportBoundary"]
+3:I[97367,["/_next/static/chunks/4fd93823156e59e8.js"],"MetadataBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"c4Dg9Vll0rDMNg3hG50mx","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"AttendEase - GPS-Based Attendance Tracking"}],["$","meta","1",{"name":"description","content":"Simple attendance tracking based on location. Automatically track student attendance when they arrive at class."}]]}]}]}],null]}],"loading":null,"isPartial":false}

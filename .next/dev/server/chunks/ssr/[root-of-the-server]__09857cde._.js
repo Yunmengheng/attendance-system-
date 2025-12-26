@@ -715,14 +715,18 @@ __turbopack_context__.s([
     "supabase",
     ()=>supabase
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@supabase/supabase-js/dist/index.mjs [app-ssr] (ecmascript) <locals>");
+(()=>{
+    const e = new Error("Cannot find module '@supabase/supabase-js'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 ;
 // Get your Supabase credentials from https://app.supabase.com
 const supabaseUrl = ("TURBOPACK compile-time value", "https://hqsibgdidjpckyuzfmwg.supabase.co") || '';
 const supabaseAnonKey = ("TURBOPACK compile-time value", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhxc2liZ2RpZGpwY2t5dXpmbXdnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY3NDU4MjQsImV4cCI6MjA4MjMyMTgyNH0.GmUiU35wg-Ccb_fW1SBdCnjG2L62teLUYDDWXv2Jl1Y") || '';
 if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 ;
-const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createClient"])(supabaseUrl, supabaseAnonKey);
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 }),
 "[project]/src/contexts/AuthContext.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -3423,11 +3427,29 @@ function useAttendance(classId, studentId) {
             throw error;
         }
     };
+    const markAbsentStudents = async (classId, date)=>{
+        try {
+            const targetDate = date || new Date().toISOString().split('T')[0];
+            // Call the Supabase function to mark absent students
+            const { error } = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].rpc('mark_absent_students', {
+                p_class_id: classId,
+                p_date: targetDate
+            });
+            if (error) throw error;
+            await fetchAttendance();
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success('Absent students marked successfully');
+        } catch (error) {
+            console.error('Error marking absent students:', error);
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error(error.message || 'Failed to mark absent students');
+            throw error;
+        }
+    };
     return {
         records,
         loading,
         checkIn,
         checkOut,
+        markAbsentStudents,
         refetch: fetchAttendance
     };
 }
@@ -3508,12 +3530,12 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                 className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary"
             }, void 0, false, {
                 fileName: "[project]/src/components/TeacherDashboard.tsx",
-                lineNumber: 88,
+                lineNumber: 90,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/TeacherDashboard.tsx",
-            lineNumber: 87,
+            lineNumber: 89,
             columnNumber: 7
         }, this);
     }
@@ -3534,12 +3556,12 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                         className: "w-5 h-5 text-white"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 100,
+                                        lineNumber: 102,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                    lineNumber: 99,
+                                    lineNumber: 101,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3547,13 +3569,13 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                     children: "AttendEase"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                    lineNumber: 102,
+                                    lineNumber: 104,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/TeacherDashboard.tsx",
-                            lineNumber: 98,
+                            lineNumber: 100,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3567,18 +3589,18 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 110,
+                                        lineNumber: 112,
                                         columnNumber: 29
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$moon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Moon$3e$__["Moon"], {
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 110,
+                                        lineNumber: 112,
                                         columnNumber: 59
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                    lineNumber: 105,
+                                    lineNumber: 107,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3589,7 +3611,7 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                             children: user.name
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                            lineNumber: 113,
+                                            lineNumber: 115,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3597,13 +3619,13 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                             children: "Teacher"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                            lineNumber: 114,
+                                            lineNumber: 116,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                    lineNumber: 112,
+                                    lineNumber: 114,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3614,29 +3636,29 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 121,
+                                        lineNumber: 123,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                    lineNumber: 116,
+                                    lineNumber: 118,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/TeacherDashboard.tsx",
-                            lineNumber: 104,
+                            lineNumber: 106,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/TeacherDashboard.tsx",
-                    lineNumber: 97,
+                    lineNumber: 99,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/TeacherDashboard.tsx",
-                lineNumber: 96,
+                lineNumber: 98,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3653,7 +3675,7 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                lineNumber: 130,
+                                lineNumber: 132,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3669,13 +3691,13 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                lineNumber: 131,
+                                lineNumber: 133,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                        lineNumber: 129,
+                        lineNumber: 131,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3691,12 +3713,12 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                             className: "w-7 h-7 text-primary"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                            lineNumber: 143,
+                                            lineNumber: 145,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 142,
+                                        lineNumber: 144,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3704,7 +3726,7 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                         children: "Create Class"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 145,
+                                        lineNumber: 147,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3712,13 +3734,13 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                         children: "Set up a new class with location boundaries"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 146,
+                                        lineNumber: 148,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                lineNumber: 138,
+                                lineNumber: 140,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3730,12 +3752,12 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                             className: "w-7 h-7 text-green-600 dark:text-green-400"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                            lineNumber: 153,
+                                            lineNumber: 155,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 152,
+                                        lineNumber: 154,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3743,7 +3765,7 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                         children: "Total Students"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 155,
+                                        lineNumber: 157,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3751,13 +3773,13 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                         children: totalStudents
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 156,
+                                        lineNumber: 158,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                lineNumber: 151,
+                                lineNumber: 153,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3769,12 +3791,12 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                             className: "w-7 h-7 text-purple-600 dark:text-purple-400"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                            lineNumber: 161,
+                                            lineNumber: 163,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 160,
+                                        lineNumber: 162,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3782,7 +3804,7 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                         children: "Active Today"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 163,
+                                        lineNumber: 165,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3790,19 +3812,19 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                         children: Math.floor(totalStudents * 0.85)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 164,
+                                        lineNumber: 166,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                lineNumber: 159,
+                                lineNumber: 161,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                        lineNumber: 137,
+                        lineNumber: 139,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3812,7 +3834,7 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                 children: "Your Classes"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                lineNumber: 170,
+                                lineNumber: 172,
                                 columnNumber: 11
                             }, this),
                             transformedClasses.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3824,12 +3846,12 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                             className: "w-10 h-10 text-muted-foreground"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                            lineNumber: 175,
+                                            lineNumber: 177,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 174,
+                                        lineNumber: 176,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3837,7 +3859,7 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                         children: "No classes yet"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 177,
+                                        lineNumber: 179,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3845,7 +3867,7 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                         children: "Create your first class to start tracking attendance"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 178,
+                                        lineNumber: 180,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3854,13 +3876,13 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                         children: "Create Your First Class"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 181,
+                                        lineNumber: 183,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                lineNumber: 173,
+                                lineNumber: 175,
                                 columnNumber: 13
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "grid md:grid-cols-2 gap-6",
@@ -3869,24 +3891,24 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                                         onViewReport: ()=>setSelectedClass(classItem)
                                     }, classItem.id, false, {
                                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                        lineNumber: 191,
+                                        lineNumber: 193,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/TeacherDashboard.tsx",
-                                lineNumber: 189,
+                                lineNumber: 191,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/TeacherDashboard.tsx",
-                        lineNumber: 169,
+                        lineNumber: 171,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/TeacherDashboard.tsx",
-                lineNumber: 127,
+                lineNumber: 129,
                 columnNumber: 7
             }, this),
             showCreateModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CreateClassModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CreateClassModal"], {
@@ -3894,7 +3916,7 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                 onCreate: handleCreateClass
             }, void 0, false, {
                 fileName: "[project]/src/components/TeacherDashboard.tsx",
-                lineNumber: 204,
+                lineNumber: 206,
                 columnNumber: 9
             }, this),
             selectedClass && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AttendanceReportModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AttendanceReportModal"], {
@@ -3902,13 +3924,13 @@ function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }) {
                 onClose: ()=>setSelectedClass(null)
             }, void 0, false, {
                 fileName: "[project]/src/components/TeacherDashboard.tsx",
-                lineNumber: 211,
+                lineNumber: 213,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/TeacherDashboard.tsx",
-        lineNumber: 94,
+        lineNumber: 96,
         columnNumber: 5
     }, this);
 }

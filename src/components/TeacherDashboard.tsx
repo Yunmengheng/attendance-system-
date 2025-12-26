@@ -46,6 +46,8 @@ export function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }:
       radius: number;
       address: string;
     };
+    check_in_time?: string;
+    check_out_time?: string;
   }) => {
     try {
       await createClass({

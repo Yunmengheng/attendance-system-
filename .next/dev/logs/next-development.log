@@ -273,3 +273,1346 @@
 [00:15:43.939] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
 [00:15:43.939] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
 [00:15:43.939] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:18:30.654] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:18:31.108] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:18:31.108] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:18:31.108] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:18:33.742] Browser LOG     No profile, showing landing page
+[00:18:42.841] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:18:42.841] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:18:43.020] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:18:43.021] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:18:43.021] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:18:43.209] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:18:43.209] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:18:43.209] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:18:57.908] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:18:58.084] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:18:58.084] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:18:58.084] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:19:00.147] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:19:00.935] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:19:00.935] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:19:00.935] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:19:51.266] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:19:51.676] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:19:51.676] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:19:51.676] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:20:33.056] Server  LOG     ✓ Compiled in 10ms
+[00:21:19.253] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:21:19.713] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:21:19.713] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:21:19.713] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:21:28.349] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:21:28.519] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:21:28.519] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:21:28.519] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:24:27.358] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:24:28.143] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:24:28.143] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:24:28.143] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:24:57.331] Browser LOG     No profile, showing landing page
+[00:25:05.489] Browser ERROR   Sign in error: {"__isAuthError":true,"code":"invalid_credentials","name":"AuthApiError","status":400}
+[00:25:05.489] Browser ERROR   Login error: {"__isAuthError":true,"code":"invalid_credentials","name":"AuthApiError","status":400}
+[00:25:05.489] Browser LOG     No profile, showing landing page
+[00:25:33.999] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:35.122] Browser LOG     No profile, showing landing page
+[00:30:27.009] Server  LOG     ✓ Compiled in 10ms
+[00:37:25.002] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.006] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.010] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.012] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.017] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.019] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.020] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.021] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.024] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.025] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.027] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.028] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.031] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.032] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.033] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.035] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.037] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.038] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.040] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.041] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.043] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.045] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.047] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.048] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.051] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.052] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.054] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.056] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.057] Server  LOG     ✓ Compiled in 182ms
+[00:37:25.685] Server  LOG     ✓ Compiled in 52ms
+[00:37:25.719] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.721] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.722] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.724] Server  ERROR   ⨯ ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.726] Server  ERROR   ⨯ ./src/components/LocationPicker.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useState, useRef } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | interface LocationPickerProps {
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/components/LocationPicker.tsx [Client Component Browser]
+    ./src/components/CreateClassModal.tsx [Client Component Browser]
+    ./src/components/TeacherDashboard.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.729] Server  ERROR   ⨯ ./src/components/LocationPicker.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useState, useRef } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | interface LocationPickerProps {
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/components/LocationPicker.tsx [Client Component Browser]
+    ./src/components/CreateClassModal.tsx [Client Component Browser]
+    ./src/components/TeacherDashboard.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.731] Server  ERROR   ⨯ ./src/components/LocationPicker.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useState, useRef } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface LocationPickerProps {
+  8 |   initialLat?: number;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/components/LocationPicker.tsx [Client Component Browser]
+    ./src/components/CreateClassModal.tsx [Client Component Browser]
+    ./src/components/TeacherDashboard.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:37:25.935] Browser ERROR   ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:25.935] Browser ERROR   ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:25.935] Browser ERROR   ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:25.935] Browser ERROR   ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:25.935] Browser ERROR   ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:25.935] Browser ERROR   ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:25.935] Browser ERROR   ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:25.935] Browser ERROR   ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:25.935] Browser ERROR   ./src/components/LocationPicker.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useState, useRef } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | interface LocationPickerProps {
+
+Import trace:
+  Client Component Browser:
+    ./src/components/LocationPicker.tsx [Client Component Browser]
+    ./src/components/CreateClassModal.tsx [Client Component Browser]
+    ./src/components/TeacherDashboard.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:25.935] Browser ERROR   ./src/components/LocationPicker.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useState, useRef } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface LocationPickerProps {
+  8 |   initialLat?: number;
+
+Import trace:
+  Client Component Browser:
+    ./src/components/LocationPicker.tsx [Client Component Browser]
+    ./src/components/CreateClassModal.tsx [Client Component Browser]
+    ./src/components/TeacherDashboard.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:26.944] Browser ERROR   ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:26.944] Browser ERROR   ./src/components/LocationPicker.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useState, useRef } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | interface LocationPickerProps {
+
+Import trace:
+  Client Component Browser:
+    ./src/components/LocationPicker.tsx [Client Component Browser]
+    ./src/components/CreateClassModal.tsx [Client Component Browser]
+    ./src/components/TeacherDashboard.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:26.944] Browser ERROR   ./src/components/LocationPicker.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useState, useRef } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface LocationPickerProps {
+  8 |   initialLat?: number;
+
+Import trace:
+  Client Component Browser:
+    ./src/components/LocationPicker.tsx [Client Component Browser]
+    ./src/components/CreateClassModal.tsx [Client Component Browser]
+    ./src/components/TeacherDashboard.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:26.944] Browser ERROR   ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:26.944] Browser ERROR   ./src/components/LocationPicker.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useState, useRef } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | interface LocationPickerProps {
+
+Import trace:
+  Client Component Browser:
+    ./src/components/LocationPicker.tsx [Client Component Browser]
+    ./src/components/CreateClassModal.tsx [Client Component Browser]
+    ./src/components/TeacherDashboard.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:26.944] Browser ERROR   ./src/components/LocationPicker.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useState, useRef } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface LocationPickerProps {
+  8 |   initialLat?: number;
+
+Import trace:
+  Client Component Browser:
+    ./src/components/LocationPicker.tsx [Client Component Browser]
+    ./src/components/CreateClassModal.tsx [Client Component Browser]
+    ./src/components/TeacherDashboard.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:28.546] Server  LOG     ✓ Compiled in 2.4s
+[00:37:28.937] Browser ERROR   ./src/lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/supabase-js'
+> 1 | import { createClient } from '@supabase/supabase-js';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | // Get your Supabase credentials from https://app.supabase.com
+  4 | const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/supabase.ts [Client Component Browser]
+    ./src/contexts/AuthContext.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/supabase.ts [Client Component SSR]
+    ./src/contexts/AuthContext.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:28.937] Browser ERROR   ./src/components/LocationPicker.tsx:4:1
+Module not found: Can't resolve 'leaflet'
+  2 |
+  3 | import { useEffect, useState, useRef } from 'react';
+> 4 | import L from 'leaflet';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import 'leaflet/dist/leaflet.css';
+  6 |
+  7 | interface LocationPickerProps {
+
+Import trace:
+  Client Component Browser:
+    ./src/components/LocationPicker.tsx [Client Component Browser]
+    ./src/components/CreateClassModal.tsx [Client Component Browser]
+    ./src/components/TeacherDashboard.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:28.937] Browser ERROR   ./src/components/LocationPicker.tsx:5:1
+Module not found: Can't resolve 'leaflet/dist/leaflet.css'
+  3 | import { useEffect, useState, useRef } from 'react';
+  4 | import L from 'leaflet';
+> 5 | import 'leaflet/dist/leaflet.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface LocationPickerProps {
+  8 |   initialLat?: number;
+
+Import trace:
+  Client Component Browser:
+    ./src/components/LocationPicker.tsx [Client Component Browser]
+    ./src/components/CreateClassModal.tsx [Client Component Browser]
+    ./src/components/TeacherDashboard.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found

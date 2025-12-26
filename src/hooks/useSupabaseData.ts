@@ -355,5 +355,26 @@ export function useAttendance(classId?: string, studentId?: string) {
     }
   };
 
-  return { records, loading, checkIn, checkOut, refetch: fetchAttendance };
+  const markAbsentStudents = async (classId: string, date?: string) => {
+    try {
+      const targetDate = date || new Date().toISOString().split('T')[0];
+      
+      // Call the Supabase function to mark absent students
+      const { error } = await supabase.rpc('mark_absent_students', {
+        p_class_id: classId,
+        p_date: targetDate
+      });
+
+      if (error) throw error;
+
+      await fetchAttendance();
+      toast.success('Absent students marked successfully');
+    } catch (error: any) {
+      console.error('Error marking absent students:', error);
+      toast.error(error.message || 'Failed to mark absent students');
+      throw error;
+    }
+  };
+
+  return { records, loading, checkIn, checkOut, markAbsentStudents, refetch: fetchAttendance };
 }
