@@ -1,0 +1,52 @@
+[00:00:01.582] Server  LOG     ✓ Ready in 1068ms
+[00:00:02.141] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.968] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:00:04.968] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:00:04.968] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:00:04.968] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:00:04.968] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:00:04.968] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:00:04.968] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:00:04.968] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:00:04.968] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:00:04.968] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:00:04.968] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:00:04.968] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:00:07.006] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:00:07.186] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:00:07.186] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:00:07.186] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:00:14.089] Browser ERROR   Geolocation error: {}
+[00:00:14.089] Browser ERROR   Geolocation error: {}
+[00:00:21.547] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:22.354] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:00:22.479] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:00:22.479] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:00:22.686] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:00:22.686] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:00:22.686] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:00:22.875] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:00:22.875] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:00:22.875] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:00:23.079] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:00:23.079] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:00:23.079] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:00:29.616] Browser LOG     No profile, showing landing page
+[00:00:35.657] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:00:35.657] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:00:35.930] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:00:35.930] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:00:35.930] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:00:36.063] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:00:36.063] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:00:36.063] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:00:44.323] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:00:44.975] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:00:44.975] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:00:44.975] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
+[00:00:45.965] Browser ERROR   Geolocation error: {}
+[00:00:45.966] Browser ERROR   Geolocation error: {}
+[00:00:47.219] Browser LOG     Fetching profile for user: 61e6125a-8e43-4e4c-842f-cc31858f5787
+[00:00:47.385] Browser LOG     Profile query result: {"data":{"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"},"error":null}
+[00:00:47.385] Browser LOG     Profile set successfully: {"created_at":"2025-12-26T16:12:32.331317+00:00","email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student","updated_at":"2025-12-26T16:12:32.331317+00:00"}
+[00:00:47.385] Browser LOG     User profile loaded: {"email":"menghengyun@gmail.com","id":"61e6125a-8e43-4e4c-842f-cc31858f5787","name":"menghengyun","role":"student"}
