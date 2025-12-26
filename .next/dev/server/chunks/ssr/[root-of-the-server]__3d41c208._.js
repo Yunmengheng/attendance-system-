@@ -811,8 +811,40 @@ function AuthProvider({ children }) {
                 });
                 console.log('Profile set successfully:', data);
             } else {
-                console.log('No profile data found - user may need to complete signup');
-                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('Profile not found. Please sign up again.');
+                console.log('No profile data found - attempting to create profile from user metadata');
+                // Try to get user metadata
+                const { data: { user } } = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].auth.getUser();
+                if (user) {
+                    const name = user.user_metadata?.name || user.email?.split('@')[0] || 'User';
+                    const role = user.user_metadata?.role || 'student';
+                    console.log('Creating profile with:', {
+                        name,
+                        role,
+                        email: user.email
+                    });
+                    // Create profile
+                    const { data: newProfile, error: createError } = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].from('profiles').insert([
+                        {
+                            id: userId,
+                            email: user.email,
+                            name: name,
+                            role: role
+                        }
+                    ]).select().single();
+                    if (createError) {
+                        console.error('Failed to create profile:', createError);
+                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('Failed to create user profile. Please contact support.');
+                    } else if (newProfile) {
+                        setProfile({
+                            id: newProfile.id,
+                            email: newProfile.email,
+                            name: newProfile.name,
+                            role: newProfile.role
+                        });
+                        console.log('Profile created and set:', newProfile);
+                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success('Profile created successfully!');
+                    }
+                }
             }
         } catch (error) {
             console.error('Error fetching profile:', error);
@@ -828,13 +860,24 @@ function AuthProvider({ children }) {
                 email,
                 password
             });
-            if (error) throw error;
+            if (error) {
+                console.error('Sign in error:', error);
+                // Handle specific error cases
+                if (error.message.includes('Email not confirmed')) {
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('Please check your email and confirm your account before signing in.');
+                } else if (error.message.includes('Invalid login credentials')) {
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('Invalid email or password. Please try again.');
+                } else {
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error(error.message || 'Failed to sign in');
+                }
+                throw error;
+            }
             if (data.user) {
                 await fetchProfile(data.user.id);
                 __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success('Successfully signed in!');
             }
         } catch (error) {
-            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error(error.message || 'Failed to sign in');
+            // Error already handled above
             throw error;
         } finally{
             setLoading(false);
@@ -851,11 +894,16 @@ function AuthProvider({ children }) {
                     data: {
                         name,
                         role
-                    }
+                    },
+                    emailRedirectTo: `${window.location.origin}/auth/callback`
                 }
             });
-            if (error) throw error;
+            if (error) {
+                console.error('Signup error details:', error);
+                throw error;
+            }
             if (data.user) {
+                console.log('User created:', data.user);
                 // Check if profile already exists
                 const { data: existingProfile } = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].from('profiles').select('id').eq('id', data.user.id).limit(1);
                 // Only create profile if it doesn't exist
@@ -868,13 +916,25 @@ function AuthProvider({ children }) {
                             role
                         }
                     ]);
-                    if (profileError) throw profileError;
+                    if (profileError) {
+                        console.error('Profile creation error:', profileError);
+                        throw profileError;
+                    }
                 }
-                await fetchProfile(data.user.id);
-                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success('Account created successfully! Please check your email to verify your account.');
+                // Check if email confirmation is required
+                if (data.session) {
+                    // User is auto-confirmed, fetch profile immediately
+                    await fetchProfile(data.user.id);
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success('Account created successfully!');
+                } else {
+                    // Email confirmation required
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success('Account created! Please check your email to verify your account.');
+                }
             }
         } catch (error) {
-            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error(error.message || 'Failed to sign up');
+            console.error('Signup error:', error);
+            const errorMessage = error?.message || error?.error_description || 'Failed to sign up';
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error(errorMessage);
             throw error;
         } finally{
             setLoading(false);
@@ -907,7 +967,7 @@ function AuthProvider({ children }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/src/contexts/AuthContext.tsx",
-        lineNumber: 224,
+        lineNumber: 289,
         columnNumber: 10
     }, this);
 }

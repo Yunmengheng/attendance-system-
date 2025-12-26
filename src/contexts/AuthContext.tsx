@@ -110,8 +110,43 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         });
         console.log('Profile set successfully:', data);
       } else {
-        console.log('No profile data found - user may need to complete signup');
-        toast.error('Profile not found. Please sign up again.');
+        console.log('No profile data found - attempting to create profile from user metadata');
+        
+        // Try to get user metadata
+        const { data: { user } } = await supabase.auth.getUser();
+        
+        if (user) {
+          const name = user.user_metadata?.name || user.email?.split('@')[0] || 'User';
+          const role = user.user_metadata?.role || 'student';
+          
+          console.log('Creating profile with:', { name, role, email: user.email });
+          
+          // Create profile
+          const { data: newProfile, error: createError } = await supabase
+            .from('profiles')
+            .insert([{
+              id: userId,
+              email: user.email!,
+              name: name,
+              role: role,
+            }])
+            .select()
+            .single();
+          
+          if (createError) {
+            console.error('Failed to create profile:', createError);
+            toast.error('Failed to create user profile. Please contact support.');
+          } else if (newProfile) {
+            setProfile({
+              id: newProfile.id,
+              email: newProfile.email,
+              name: newProfile.name,
+              role: newProfile.role as 'teacher' | 'student',
+            });
+            console.log('Profile created and set:', newProfile);
+            toast.success('Profile created successfully!');
+          }
+        }
       }
     } catch (error: any) {
       console.error('Error fetching profile:', error);
@@ -129,14 +164,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         password,
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Sign in error:', error);
+        
+        // Handle specific error cases
+        if (error.message.includes('Email not confirmed')) {
+          toast.error('Please check your email and confirm your account before signing in.');
+        } else if (error.message.includes('Invalid login credentials')) {
+          toast.error('Invalid email or password. Please try again.');
+        } else {
+          toast.error(error.message || 'Failed to sign in');
+        }
+        throw error;
+      }
 
       if (data.user) {
         await fetchProfile(data.user.id);
         toast.success('Successfully signed in!');
       }
     } catch (error: any) {
-      toast.error(error.message || 'Failed to sign in');
+      // Error already handled above
       throw error;
     } finally {
       setLoading(false);
@@ -156,12 +203,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             name,
             role,
           },
+          emailRedirectTo: `${window.location.origin}/auth/callback`,
         },
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Signup error details:', error);
+        throw error;
+      }
 
       if (data.user) {
+        console.log('User created:', data.user);
+        
         // Check if profile already exists
         const { data: existingProfile } = await supabase
           .from('profiles')
@@ -182,14 +235,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
               },
             ]);
 
-          if (profileError) throw profileError;
+          if (profileError) {
+            console.error('Profile creation error:', profileError);
+            throw profileError;
+          }
         }
 
-        await fetchProfile(data.user.id);
-        toast.success('Account created successfully! Please check your email to verify your account.');
+        // Check if email confirmation is required
+        if (data.session) {
+          // User is auto-confirmed, fetch profile immediately
+          await fetchProfile(data.user.id);
+          toast.success('Account created successfully!');
+        } else {
+          // Email confirmation required
+          toast.success('Account created! Please check your email to verify your account.');
+        }
       }
     } catch (error: any) {
-      toast.error(error.message || 'Failed to sign up');
+      console.error('Signup error:', error);
+      const errorMessage = error?.message || error?.error_description || 'Failed to sign up';
+      toast.error(errorMessage);
       throw error;
     } finally {
       setLoading(false);
