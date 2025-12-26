@@ -1,8 +1,15 @@
 'use client';
 
-import { useState } from 'react';
-import { X, MapPin } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { X, MapPin, MapIcon } from 'lucide-react';
 import { toast } from 'sonner';
+import dynamic from 'next/dynamic';
+
+// Dynamically import the map component to avoid SSR issues
+const LocationPicker = dynamic(() => import('./LocationPicker'), {
+  ssr: false,
+  loading: () => <div className="h-96 bg-secondary rounded-lg animate-pulse" />
+});
 
 interface CreateClassModalProps {
   onClose: () => void;
@@ -26,6 +33,28 @@ export function CreateClassModal({ onClose, onCreate }: CreateClassModalProps) {
   const [longitude, setLongitude] = useState('');
   const [radius, setRadius] = useState('100');
   const [loadingLocation, setLoadingLocation] = useState(false);
+  const [showMap, setShowMap] = useState(false);
+
+  useEffect(() => {
+    // Try to get reverse geocoded address when coordinates change
+    if (latitude && longitude && !address) {
+      reverseGeocode(parseFloat(latitude), parseFloat(longitude));
+    }
+  }, [latitude, longitude]);
+
+  const reverseGeocode = async (lat: number, lng: number) => {
+    try {
+      const response = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`
+      );
+      const data = await response.json();
+      if (data.display_name) {
+        setAddress(data.display_name);
+      }
+    } catch (error) {
+      console.error('Reverse geocoding failed:', error);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,13 +81,17 @@ export function CreateClassModal({ onClose, onCreate }: CreateClassModalProps) {
     }
 
     setLoadingLocation(true);
+    toast.info('Requesting location permission...');
+    
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        setLatitude(position.coords.latitude.toFixed(6));
-        setLongitude(position.coords.longitude.toFixed(6));
-        setAddress('Current Location');
+        const lat = position.coords.latitude.toFixed(6);
+        const lng = position.coords.longitude.toFixed(6);
+        setLatitude(lat);
+        setLongitude(lng);
         setLoadingLocation(false);
-        toast.success('Location captured successfully');
+        toast.success('Location captured successfully!');
+        reverseGeocode(parseFloat(lat), parseFloat(lng));
       },
       (error) => {
         setLoadingLocation(false);
@@ -66,26 +99,35 @@ export function CreateClassModal({ onClose, onCreate }: CreateClassModalProps) {
         
         switch(error.code) {
           case error.PERMISSION_DENIED:
-            errorMessage += 'Please allow location access in your browser.';
+            errorMessage = 'Location permission denied. Please enable location access in your browser settings.';
             break;
           case error.POSITION_UNAVAILABLE:
-            errorMessage += 'Location information is unavailable.';
+            errorMessage = 'Location information is unavailable. Please try again.';
             break;
           case error.TIMEOUT:
-            errorMessage += 'Location request timed out.';
+            errorMessage = 'Location request timed out. Please try again.';
             break;
           default:
-            errorMessage += 'Please enter coordinates manually.';
+            errorMessage = 'An unknown error occurred. Please enter coordinates manually.';
         }
         
+        console.error('Geolocation error:', error);
         toast.error(errorMessage);
       },
       {
         enableHighAccuracy: true,
-        timeout: 10000,
+        timeout: 15000,
         maximumAge: 0
       }
     );
+  };
+
+  const handleMapLocationSelect = (lat: number, lng: number) => {
+    setLatitude(lat.toFixed(6));
+    setLongitude(lng.toFixed(6));
+    setShowMap(false);
+    toast.success('Location selected from map');
+    reverseGeocode(lat, lng);
   };
 
   return (
@@ -201,15 +243,52 @@ export function CreateClassModal({ onClose, onCreate }: CreateClassModalProps) {
               </div>
             </div>
 
-            <button
-              type="button"
-              onClick={handleUseCurrentLocation}
-              disabled={loadingLocation}
-              className="flex items-center gap-2 px-4 py-2 text-sm text-primary hover:bg-primary/5 rounded-lg transition-colors mb-4 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <MapPin className={`w-4 h-4 ${loadingLocation ? 'animate-pulse' : ''}`} />
-              {loadingLocation ? 'Getting location...' : 'Use Current Location'}
-            </button>
+            {/* Location Buttons */}
+            <div className="flex gap-3 mb-4">
+              <button
+                type="button"
+                onClick={handleUseCurrentLocation}
+                disabled={loadingLocation}
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm bg-primary/5 text-primary border border-primary/20 rounded-lg hover:bg-primary/10 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <MapPin className={`w-4 h-4 ${loadingLocation ? 'animate-pulse' : ''}`} />
+                {loadingLocation ? 'Getting location...' : 'Use Current Location'}
+              </button>
+              
+              <button
+                type="button"
+                onClick={() => setShowMap(true)}
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+              >
+                <MapIcon className="w-4 h-4" />
+                Choose from Map
+              </button>
+            </div>
+
+            {/* Map Modal */}
+            {showMap && (
+              <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-6 z-[60]">
+                <div className="bg-white dark:bg-card rounded-2xl shadow-xl w-full max-w-4xl max-h-[90vh] overflow-hidden">
+                  <div className="px-6 py-4 border-b border-border flex justify-between items-center">
+                    <h3 className="text-xl">Select Location on Map</h3>
+                    <button
+                      onClick={() => setShowMap(false)}
+                      className="p-2 hover:bg-secondary rounded-lg transition-colors"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <div className="p-6">
+                    <LocationPicker
+                      key={Date.now()}
+                      initialLat={latitude ? parseFloat(latitude) : undefined}
+                      initialLng={longitude ? parseFloat(longitude) : undefined}
+                      onLocationSelect={handleMapLocationSelect}
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Radius */}
             <div>

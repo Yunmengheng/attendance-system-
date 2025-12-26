@@ -7,6 +7,7 @@ import { CreateClassModal } from './CreateClassModal';
 import { ClassCard } from './ClassCard';
 import { AttendanceReportModal } from './AttendanceReportModal';
 import { useAuth } from '@/contexts/AuthContext';
+import { useTeacherClasses } from '@/hooks/useSupabaseData';
 
 interface TeacherDashboardProps {
   user: User;
@@ -32,52 +33,60 @@ interface Class {
 
 export function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }: TeacherDashboardProps) {
   const { signOut } = useAuth();
+  const { classes, loading, createClass } = useTeacherClasses(user.id);
   const [showCreateModal, setShowCreateModal] = useState(false);
-  const [classes, setClasses] = useState<Class[]>([
-    {
-      id: '1',
-      name: 'Computer Science 101',
-      code: 'CS101A',
-      teacherId: user.id,
-      location: {
-        latitude: 40.7128,
-        longitude: -74.0060,
-        radius: 100,
-        address: 'New York University, New York, NY'
-      },
-      createdAt: new Date().toISOString(),
-      studentCount: 24
-    },
-    {
-      id: '2',
-      name: 'Data Structures',
-      code: 'DS202B',
-      teacherId: user.id,
-      location: {
-        latitude: 40.7489,
-        longitude: -73.9680,
-        radius: 150,
-        address: 'Hunter College, New York, NY'
-      },
-      createdAt: new Date().toISOString(),
-      studentCount: 18
-    }
-  ]);
   const [selectedClass, setSelectedClass] = useState<Class | null>(null);
 
-  const handleCreateClass = (classData: Omit<Class, 'id' | 'teacherId' | 'createdAt' | 'studentCount'>) => {
-    const newClass: Class = {
-      ...classData,
-      id: Math.random().toString(36).substr(2, 9),
-      teacherId: user.id,
-      createdAt: new Date().toISOString(),
-      studentCount: 0
+  const handleCreateClass = async (classData: {
+    name: string;
+    code: string;
+    location: {
+      latitude: number;
+      longitude: number;
+      radius: number;
+      address: string;
     };
-    setClasses([...classes, newClass]);
-    setShowCreateModal(false);
+  }) => {
+    try {
+      await createClass({
+        name: classData.name,
+        code: classData.code,
+        location_latitude: classData.location.latitude,
+        location_longitude: classData.location.longitude,
+        location_radius: classData.location.radius,
+        location_address: classData.location.address,
+      });
+      setShowCreateModal(false);
+    } catch (error) {
+      // Error already handled in hook
+    }
   };
 
-  const totalStudents = classes.reduce((sum, c) => sum + c.studentCount, 0);
+  // Transform classes to match the ClassCard expected format
+  const transformedClasses = classes.map(cls => ({
+    id: cls.id,
+    name: cls.name,
+    code: cls.code,
+    teacherId: cls.teacher_id,
+    location: {
+      latitude: cls.location_latitude,
+      longitude: cls.location_longitude,
+      radius: cls.location_radius,
+      address: cls.location_address,
+    },
+    createdAt: cls.created_at,
+    studentCount: cls.student_count || 0,
+  }));
+
+  const totalStudents = transformedClasses.reduce((sum, c) => sum + c.studentCount, 0);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -118,7 +127,7 @@ export function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }:
         <div className="mb-12">
           <h1 className="text-4xl mb-3">Welcome back, {user.name.split(' ')[0]}</h1>
           <p className="text-xl text-muted-foreground">
-            You have {classes.length} {classes.length === 1 ? 'class' : 'classes'} with {totalStudents} total students
+            You have {transformedClasses.length} {transformedClasses.length === 1 ? 'class' : 'classes'} with {totalStudents} total students
           </p>
         </div>
 
@@ -158,7 +167,7 @@ export function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }:
         <div>
           <h2 className="text-3xl mb-8">Your Classes</h2>
 
-          {classes.length === 0 ? (
+          {transformedClasses.length === 0 ? (
             <div className="bg-white dark:bg-card rounded-2xl border-2 border-dashed border-border p-20 text-center">
               <div className="w-20 h-20 bg-secondary rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <BookOpen className="w-10 h-10 text-muted-foreground" />
@@ -176,7 +185,7 @@ export function TeacherDashboard({ user, onLogout, isDarkMode, toggleDarkMode }:
             </div>
           ) : (
             <div className="grid md:grid-cols-2 gap-6">
-              {classes.map((classItem) => (
+              {transformedClasses.map((classItem) => (
                 <ClassCard
                   key={classItem.id}
                   classData={classItem}

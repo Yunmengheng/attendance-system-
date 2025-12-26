@@ -6,6 +6,7 @@ import { MapPin, LogOut, Clock, CheckCircle, XCircle, Plus, Award, BookOpen, Moo
 import { JoinClassModal } from './JoinClassModal';
 import { toast } from 'sonner';
 import { useAuth } from '@/contexts/AuthContext';
+import { useStudentClasses, useAttendance } from '@/hooks/useSupabaseData';
 
 interface StudentDashboardProps {
   user: User;
@@ -39,65 +40,40 @@ interface AttendanceHistory {
 }
 
 export function StudentDashboard({ user, onLogout, isDarkMode, toggleDarkMode }: StudentDashboardProps) {
-  const { signOut } = useAuth();
+  const { signOut, user: authUser } = useAuth();
   const [showJoinModal, setShowJoinModal] = useState(false);
   const [currentLocation, setCurrentLocation] = useState<{ latitude: number; longitude: number } | null>(null);
   const [locationError, setLocationError] = useState<string | null>(null);
-  const [enrolledClasses, setEnrolledClasses] = useState<EnrolledClass[]>([
-    {
-      id: '1',
-      name: 'Computer Science 101',
-      code: 'CS101A',
-      teacherName: 'Dr. Smith',
-      location: {
-        latitude: 40.7128,
-        longitude: -74.0060,
-        radius: 100,
-        address: 'New York University, New York, NY'
-      },
-      isCheckedIn: false
-    },
-    {
-      id: '2',
-      name: 'Data Structures',
-      code: 'DS202B',
-      teacherName: 'Prof. Johnson',
-      location: {
-        latitude: 40.7489,
-        longitude: -73.9680,
-        radius: 150,
-        address: 'Hunter College, New York, NY'
-      },
-      isCheckedIn: false
-    }
-  ]);
+  const [checkedInClasses, setCheckedInClasses] = useState<Set<string>>(new Set());
+  
+  // Fetch real data from Supabase
+  const { enrolledClasses: supabaseClasses, loading: classesLoading, joinClass, refetch: refetchClasses } = useStudentClasses(authUser?.id || '');
+  const { records: attendanceRecords, loading: attendanceLoading, checkIn, checkOut } = useAttendance(undefined, authUser?.id);
 
-  const [attendanceHistory, setAttendanceHistory] = useState<AttendanceHistory[]>([
-    {
-      id: '1',
-      className: 'Computer Science 101',
-      date: '2024-12-16',
-      checkInTime: '09:00 AM',
-      checkOutTime: '10:30 AM',
-      status: 'present'
+  // Transform Supabase classes to match component interface
+  const enrolledClasses: EnrolledClass[] = supabaseClasses.map(cls => ({
+    id: cls.id,
+    name: cls.name,
+    code: cls.code,
+    teacherName: cls.teacher_name || 'Unknown',
+    location: {
+      latitude: cls.location_latitude,
+      longitude: cls.location_longitude,
+      radius: cls.location_radius,
+      address: cls.location_address
     },
-    {
-      id: '2',
-      className: 'Data Structures',
-      date: '2024-12-16',
-      checkInTime: '11:15 AM',
-      checkOutTime: '12:45 PM',
-      status: 'present'
-    },
-    {
-      id: '3',
-      className: 'Computer Science 101',
-      date: '2024-12-15',
-      checkInTime: '09:10 AM',
-      checkOutTime: '10:35 AM',
-      status: 'late'
-    }
-  ]);
+    isCheckedIn: checkedInClasses.has(cls.id)
+  }));
+
+  // Transform attendance records to match component interface
+  const attendanceHistory: AttendanceHistory[] = attendanceRecords.map(record => ({
+    id: record.id,
+    className: record.class_name || 'Unknown Class',
+    date: new Date(record.check_in_time).toLocaleDateString(),
+    checkInTime: new Date(record.check_in_time).toLocaleTimeString(),
+    checkOutTime: record.check_out_time ? new Date(record.check_out_time).toLocaleTimeString() : undefined,
+    status: record.status
+  }));
 
   useEffect(() => {
     // Get current location
@@ -171,7 +147,7 @@ export function StudentDashboard({ user, onLogout, isDarkMode, toggleDarkMode }:
     return distance <= classLocation.radius;
   };
 
-  const handleCheckIn = (classId: string) => {
+  const handleCheckIn = async (classId: string) => {
     const classItem = enrolledClasses.find(c => c.id === classId);
     if (!classItem) return;
 
@@ -185,59 +161,64 @@ export function StudentDashboard({ user, onLogout, isDarkMode, toggleDarkMode }:
       return;
     }
 
-    setEnrolledClasses(classes =>
-      classes.map(c =>
-        c.id === classId
-          ? { ...c, isCheckedIn: true, checkInTime: new Date().toISOString() }
-          : c
-      )
-    );
-    toast.success('Checked in successfully!');
+    try {
+      await checkIn(
+        classId,
+        authUser?.id || '',
+        currentLocation.latitude,
+        currentLocation.longitude
+      );
+      setCheckedInClasses(prev => new Set(prev).add(classId));
+      toast.success('Checked in successfully!');
+    } catch (error) {
+      console.error('Check-in error:', error);
+    }
   };
 
-  const handleCheckOut = (classId: string) => {
+  const handleCheckOut = async (classId: string) => {
     const classItem = enrolledClasses.find(c => c.id === classId);
     if (!classItem || !classItem.isCheckedIn) return;
 
-    setEnrolledClasses(classes =>
-      classes.map(c =>
-        c.id === classId ? { ...c, isCheckedIn: false, checkInTime: undefined } : c
-      )
-    );
+    if (!currentLocation) {
+      toast.error('Unable to get your location. Please enable location services.');
+      return;
+    }
 
-    // Add to history
-    const newHistory: AttendanceHistory = {
-      id: Math.random().toString(36).substr(2, 9),
-      className: classItem.name,
-      date: new Date().toLocaleDateString(),
-      checkInTime: classItem.checkInTime
-        ? new Date(classItem.checkInTime).toLocaleTimeString()
-        : '',
-      checkOutTime: new Date().toLocaleTimeString(),
-      status: 'present'
-    };
-    setAttendanceHistory([newHistory, ...attendanceHistory]);
-    toast.success('Checked out successfully!');
+    try {
+      // Find the active attendance record for this class
+      const activeRecord = attendanceRecords.find(
+        r => r.class_id === classId && !r.check_out_time
+      );
+
+      if (activeRecord) {
+        await checkOut(
+          activeRecord.id,
+          currentLocation.latitude,
+          currentLocation.longitude
+        );
+        setCheckedInClasses(prev => {
+          const newSet = new Set(prev);
+          newSet.delete(classId);
+          return newSet;
+        });
+        toast.success('Checked out successfully!');
+      }
+    } catch (error) {
+      console.error('Check-out error:', error);
+    }
   };
 
-  const handleJoinClass = (code: string) => {
-    // Mock join class
-    const mockClass: EnrolledClass = {
-      id: Math.random().toString(36).substr(2, 9),
-      name: 'New Class',
-      code: code,
-      teacherName: 'Teacher',
-      location: {
-        latitude: 40.7128,
-        longitude: -74.0060,
-        radius: 100,
-        address: 'Sample Location'
-      },
-      isCheckedIn: false
-    };
-    setEnrolledClasses([...enrolledClasses, mockClass]);
-    setShowJoinModal(false);
-    toast.success('Joined class successfully!');
+  const handleJoinClass = async (code: string) => {
+    try {
+      await joinClass(code);
+      setShowJoinModal(false);
+    } catch (error: any) {
+      // Error is already handled by the hook with toast
+      // Just close the modal if it's a duplicate enrollment
+      if (error.message === 'You are already enrolled in this class') {
+        setShowJoinModal(false);
+      }
+    }
   };
 
   const presentCount = attendanceHistory.filter(h => h.status === 'present').length;
